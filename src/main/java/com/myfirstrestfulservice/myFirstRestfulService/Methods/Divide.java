@@ -1,8 +1,8 @@
 package com.myfirstrestfulservice.myFirstRestfulService.Methods;
 
-public class Sum {
+public class Divide {
     private final String content;
-    public Sum(String content) {
+    public Divide(String content) {
         this.content = content;
     }
     public String getContent() {
