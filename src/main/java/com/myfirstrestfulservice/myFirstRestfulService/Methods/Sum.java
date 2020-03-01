@@ -1,11 +1,11 @@
 package com.myfirstrestfulservice.myFirstRestfulService.Methods;
 
 public class Sum {
-    private final String content;
-    public Sum(String content) {
-        this.content = content;
+    private final String sum;
+    public Sum(String sum) {
+        this.sum = sum;
     }
-    public String getContent() {
-        return content;
+    public String getSum() {
+        return sum;
     }
 }

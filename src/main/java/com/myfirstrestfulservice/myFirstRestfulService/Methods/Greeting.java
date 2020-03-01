@@ -1,17 +1,27 @@
 package com.myfirstrestfulservice.myFirstRestfulService.Methods;
 
 public class Greeting {
-    private final long id;
-    private final String content;
+//    private final long id;
+//    private final String greeting;
+//
+//    public Greeting(long id, String greeting) {
+//        this.id = id;
+//        this.greeting = greeting;
+//    }
+//    public long getId() {
+//        return id;
+//    }
+//    public String getGreeting() {
+//        return greeting;
+//    }
 
-    public Greeting(long id, String content) {
-        this.id = id;
-        this.content = content;
+    private final String greeting;
+
+    public Greeting(String greeting) {
+
+        this.greeting = greeting;
     }
-    public long getId() {
-        return id;
-    }
-    public String getContent() {
-        return content;
+    public String getGreeting() {
+        return greeting;
     }
 }

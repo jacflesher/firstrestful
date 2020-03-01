@@ -1,13 +1,13 @@
 package com.myfirstrestfulservice.myFirstRestfulService.Methods;
 
 public class DefaultLanding {
-    private final String content;
+    private final String contents;
 
-    public DefaultLanding(String content) {
-        this.content = content;
+    public DefaultLanding(String contents) {
+        this.contents = contents;
     }
 
     public String getContent() {
-        return content;
+        return contents;
     }
 }

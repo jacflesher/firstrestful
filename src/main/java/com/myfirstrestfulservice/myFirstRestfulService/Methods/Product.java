@@ -1,11 +1,11 @@
 package com.myfirstrestfulservice.myFirstRestfulService.Methods;
 
 public class Product {
-    private final String content;
-    public Product(String content) {
-        this.content = content;
+    private final String product;
+    public Product(String product) {
+        this.product = product;
     }
-    public String getContent() {
-        return content;
+    public String getProduct() {
+        return product;
     }
 }

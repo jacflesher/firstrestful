@@ -1,11 +1,11 @@
 package com.myfirstrestfulservice.myFirstRestfulService.Methods;
 
 public class Divide {
-    private final String content;
-    public Divide(String content) {
-        this.content = content;
+    private final String divide;
+    public Divide(String divide) {
+        this.divide = divide;
     }
-    public String getContent() {
-        return content;
+    public String getDivide() {
+        return divide;
     }
 }
