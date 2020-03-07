@@ -1,12 +1,9 @@
 package com.myfirstrestfulservice.myFirstRestfulService.Controllers;
 import java.util.concurrent.atomic.AtomicLong;
 
-import com.myfirstrestfulservice.myFirstRestfulService.Methods.DefaultLanding;
-import com.myfirstrestfulservice.myFirstRestfulService.Methods.Greeting;
-import com.myfirstrestfulservice.myFirstRestfulService.Methods.Sum;
-import com.myfirstrestfulservice.myFirstRestfulService.Methods.Product;
-import com.myfirstrestfulservice.myFirstRestfulService.Methods.Divide;
-import com.myfirstrestfulservice.myFirstRestfulService.Methods.Diff;
+import com.myfirstrestfulservice.myFirstRestfulService.Methods.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -109,6 +106,15 @@ public class Controller {
             return new Divide(String.format(hint));
         }
     }
+
+    @PostMapping("/request")
+    public ResponseEntity postController(
+            @RequestBody LoginForm loginForm) {
+
+       // exampleService.fakeAuthenticate(loginForm);
+        return ResponseEntity.ok(HttpStatus.OK);
+    }
+
     private static String Hint(String type) {
         if (type == "default") {
             return "(Hint) /greeting, /sum, /diff, /product, /divide";
