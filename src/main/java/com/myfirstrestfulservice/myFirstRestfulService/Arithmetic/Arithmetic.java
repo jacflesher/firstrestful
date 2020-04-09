@@ -1,7 +1,11 @@
-package com.myfirstrestfulservice.myFirstRestfulService.Controllers;
+package com.myfirstrestfulservice.myFirstRestfulService.Arithmetic;
 import java.util.concurrent.atomic.AtomicLong;
 
-import com.myfirstrestfulservice.myFirstRestfulService.Methods.*;
+import com.myfirstrestfulservice.myFirstRestfulService.Arithmetic.DiffProperties;
+import com.myfirstrestfulservice.myFirstRestfulService.Arithmetic.DivideProperties;
+import com.myfirstrestfulservice.myFirstRestfulService.Arithmetic.ProductProperties;
+import com.myfirstrestfulservice.myFirstRestfulService.Arithmetic.SumProperties;
+import com.myfirstrestfulservice.myFirstRestfulService.Properties.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,29 +13,29 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-public class Controller {
+public class Arithmetic {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
     private static final String xStr = "0";
     private static final String yStr = "0";
 
     @GetMapping("/")
-    public DefaultLanding defaultlanding() {
+    public DefaultLandingProperties defaultlanding() {
         String hint = Hint("default");
-        return new DefaultLanding(hint);
+        return new DefaultLandingProperties(hint);
     }
 
     @GetMapping("/greeting")
-    public Greeting greeting(@RequestParam(value = "name", defaultValue = "") String name) {
+    public GreetingProperties greeting(@RequestParam(value = "name", defaultValue = "") String name) {
         if (name.equals("")) {
             String hint = Hint("greeting");
-            return new Greeting(String.format(hint));
+            return new GreetingProperties(String.format(hint));
         } else {
-            return new Greeting(String.format(template, name));
+            return new GreetingProperties(String.format(template, name));
         }
     }
     @GetMapping("/sum")
-    public Sum sum(
+    public SumProperties sum(
             @RequestParam(value = "x", defaultValue = "0") Double x,
             @RequestParam(value = "y", defaultValue = "0") Double y
     )
@@ -41,14 +45,14 @@ public class Controller {
         String finalSum = String.valueOf(x + y);
         String sumFin = String.format(finalSum);
         if (x + y != 0) {
-            return new Sum(sumFin);
+            return new SumProperties(sumFin);
         } else {
             String hint = Hint("sum");
-            return new Sum(String.format(hint));
+            return new SumProperties(String.format(hint));
         }
     }
     @GetMapping("/diff")
-    public Diff diff(
+    public DiffProperties diff(
             @RequestParam(value = "x", defaultValue = "0") Double x,
             @RequestParam(value = "y", defaultValue = "0") Double y
     )
@@ -63,14 +67,14 @@ public class Controller {
         }
         String DiffFin = String.format(finalDiff);
         if (x + y != 0) {
-            return new Diff(DiffFin);
+            return new DiffProperties(DiffFin);
         } else {
             String hint = Hint("diff");
-            return new Diff(String.format(hint));
+            return new DiffProperties(String.format(hint));
         }
     }
     @GetMapping("/product")
-    public Product product(
+    public ProductProperties product(
             @RequestParam(value = "x", defaultValue = "0") Double x,
             @RequestParam(value = "y", defaultValue = "0") Double y
     )
@@ -81,14 +85,14 @@ public class Controller {
         finalProduct = String.valueOf(x * y);
         String ProductFin = String.format(finalProduct);
         if (x + y != 0) {
-            return new Product(ProductFin);
+            return new ProductProperties(ProductFin);
         } else {
             String hint = Hint("product");
-            return new Product(String.format(hint));
+            return new ProductProperties(String.format(hint));
         }
     }
     @GetMapping("/divide")
-    public Divide divide(
+    public DivideProperties divide(
             @RequestParam(value = "x", defaultValue = "0") Double x,
             @RequestParam(value = "y", defaultValue = "0") Double y
     )
@@ -100,18 +104,18 @@ public class Controller {
         finalDivide = String.valueOf(dblDivide);
         String ProductFin = String.format(finalDivide);
         if (x + y != 0) {
-            return new Divide(ProductFin);
+            return new DivideProperties(ProductFin);
         } else {
             String hint = Hint("divide");
-            return new Divide(String.format(hint));
+            return new DivideProperties(String.format(hint));
         }
     }
 
     @PostMapping("/request")
     public ResponseEntity postController(
-            @RequestBody LoginForm loginForm) {
+            @RequestBody LoginFormProperties loginFormProperties) {
 
-       // exampleService.fakeAuthenticate(loginForm);
+       // exampleService.fakeAuthenticate(loginFormProperties);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 

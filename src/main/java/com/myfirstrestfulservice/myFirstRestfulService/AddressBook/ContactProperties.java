@@ -1,6 +1,6 @@
-package com.myfirstrestfulservice.myFirstRestfulService.Methods;
+package com.myfirstrestfulservice.myFirstRestfulService.AddressBook;
 
-public class Contact {
+public class ContactProperties {
     private String id;
     private String name;
     private String phone;

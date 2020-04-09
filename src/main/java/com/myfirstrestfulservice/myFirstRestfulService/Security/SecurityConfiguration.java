@@ -40,6 +40,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
+                .anonymous()
+                .and()
                 .authorizeRequests()
                 .antMatchers("/", "/error/**", "/swagger-ui.html","/v2/api-docs").permitAll()
                 .anyRequest().authenticated()

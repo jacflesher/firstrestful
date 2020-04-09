@@ -1,10 +1,10 @@
-package com.myfirstrestfulservice.myFirstRestfulService.Methods;
+package com.myfirstrestfulservice.myFirstRestfulService.Properties;
 
-public class Greeting {
+public class GreetingProperties {
 //    private final long id;
 //    private final String greeting;
 //
-//    public Greeting(long id, String greeting) {
+//    public GreetingProperties(long id, String greeting) {
 //        this.id = id;
 //        this.greeting = greeting;
 //    }
@@ -17,7 +17,7 @@ public class Greeting {
 
     private final String greeting;
 
-    public Greeting(String greeting) {
+    public GreetingProperties(String greeting) {
 
         this.greeting = greeting;
     }
